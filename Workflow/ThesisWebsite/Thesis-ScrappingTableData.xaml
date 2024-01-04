@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1163,1326</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1163,1327</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Thesis_ScrappingTableData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -98,12 +98,17 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Thesis_ScrappingTableData" sap:VirtualizedContainerService.HintSize="572,1261" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Thesis_ScrappingTableData" sap:VirtualizedContainerService.HintSize="572,1262" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
       <Variable x:TypeArguments="x:String" Name="str_totalPageRaw" />
-      <Variable x:TypeArguments="x:Int32" Default="1" Name="int_counter" />
+      <Variable x:TypeArguments="x:Int32" Name="int_counter">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="1" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:Int32" Name="int_totalPage" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_isPopupChangePasswordExist" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -141,7 +146,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='No' attr='fulltext' /&gt;&lt;column name='Lecturer Name' attr='fulltext' /&gt;&lt;column name='Lecturer Code' attr='fulltext' /&gt;&lt;column name='Link Zoom' attr='fulltext' /&gt;&lt;column name='Status' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" SimulateClick="True">
+          <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='No' attr='fulltext' /&gt;&lt;column name='Lecturer Name' attr='fulltext' /&gt;&lt;column name='Lecturer Code' attr='fulltext' /&gt;&lt;column name='Link Zoom' attr='fulltext' /&gt;&lt;column name='Status' attr='fulltext' /&gt;&lt;column name='Course Code' attr='fulltext'/&gt;&lt;column name='Course Name' attr='fulltext'/&gt;&lt;column name='Class Code' attr='fulltext'/&gt;&lt;column name='Start Time' attr='fulltext'/&gt;&lt;column name='End Time' attr='fulltext'/&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" SimulateClick="True">
             <ui:ExtractData.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="23a15335-3134-44fc-a742-fb5141d52ce2" Selector="&lt;html app='chrome.exe' title='Monitor Lecturer Absences' /&gt;&lt;webctrl tag='TABLE' /&gt;" TimeoutMS="800" WaitForReady="COMPLETE" />
             </ui:ExtractData.Target>
@@ -192,7 +197,7 @@
         <InArgument x:TypeArguments="sd:DataTable">[ExtractDataTable]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510,53" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,265" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
